@@ -61,6 +61,12 @@ build CMakeFiles/program.dir/libs/data_structures/vector/vector.c.obj: C_COMPILE
   OBJECT_DIR = CMakeFiles\program.dir
   OBJECT_FILE_DIR = CMakeFiles\program.dir\libs\data_structures\vector
 
+build CMakeFiles/program.dir/libs/data_structures/vector/test.c.obj: C_COMPILER__program_Debug C$:/Users/Kirill/Desktop/labs/14_/program/libs/data_structures/vector/test.c || cmake_object_order_depends_target_program
+  DEP_FILE = CMakeFiles\program.dir\libs\data_structures\vector\test.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\program.dir
+  OBJECT_FILE_DIR = CMakeFiles\program.dir\libs\data_structures\vector
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target program
@@ -69,7 +75,7 @@ build CMakeFiles/program.dir/libs/data_structures/vector/vector.c.obj: C_COMPILE
 #############################################
 # Link the executable program.exe
 
-build program.exe: C_EXECUTABLE_LINKER__program_Debug CMakeFiles/program.dir/main.c.obj CMakeFiles/program.dir/libs/data_structures/vector/vector.c.obj
+build program.exe: C_EXECUTABLE_LINKER__program_Debug CMakeFiles/program.dir/main.c.obj CMakeFiles/program.dir/libs/data_structures/vector/vector.c.obj CMakeFiles/program.dir/libs/data_structures/vector/test.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\program.dir

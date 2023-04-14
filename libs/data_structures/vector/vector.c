@@ -1,11 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
-
-typedef struct vector {
-    int *data; // указатель на элементы вектора
-    size_t size; // размер вектора
-    size_t capacity; // вместимость вектора
-} vector;
+#include "vector.h"
 
 vector createVector(size_t n) {
     vector vector;
@@ -43,4 +36,36 @@ void shrinkToFit(vector *v){
 
 void deleteVector(vector *v){
     free(v->data);
+}
+
+bool isEmpty(vector *v){
+    return v->size == 0;
+}
+
+bool isFull(vector *v){
+    return v->size == v->capacity;
+}
+
+int getVectorValue(vector *v, size_t i){
+    return v->data[i];
+}
+
+void pushBack(vector *v, int x) {
+    if (isEmpty(v))
+        reserve(v, 1);
+    else if (isFull(v))
+        reserve(v, v->capacity * 2);
+
+    v->data[v->size] = x;
+    v->size += 1;
+}
+
+void popBack(vector *v){
+    if (isEmpty(v)) {
+        fprintf(stderr, "vector empty");
+        exit(1);
+    }
+
+    reserve(v, v->size);
+    v->size -= 1;
 }

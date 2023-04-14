@@ -1,15 +1,17 @@
 #include <stdio.h>
 #include <stdint.h>
 #include "libs/data_structures/vector/vector.h"
+#include "libs/data_structures/vector/test.h"
+
+void test(){
+    test_pushBack_emptyVector();
+    test_pushBack_fullVector();
+    test_popBack_notEmptyVector();
+}
+
 
 int main() {
-    vector v = createVector(4);
-    for (int i = 0; i < 4; i++)
-        v.data[i] = i;
+    test();
 
-    v.size = 2;
-    shrinkToFit(&v);
-    for (int i = 0; i < 4; i++)
-        printf("%d ", v.data[i]);
     return 0;
 }
