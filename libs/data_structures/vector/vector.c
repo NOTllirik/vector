@@ -1,10 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int f(int a) {
-    return a + 3;
-}
-
 typedef struct vector {
     int *data; // указатель на элементы вектора
     size_t size; // размер вектора
@@ -13,7 +9,7 @@ typedef struct vector {
 
 vector createVector(size_t n) {
     vector vector;
-    vector.data = (int *) malloc(n);
+    vector.data = (int *) malloc(n * sizeof (int));
     vector.capacity = n;
     vector.size = 0;
     if (vector.data == NULL) {
@@ -25,7 +21,7 @@ vector createVector(size_t n) {
 }
 
 void reserve(vector *v, size_t newCapacity){
-    v->data = (int *) realloc( v->data, newCapacity);
+    v->data = (int *) realloc( v->data, newCapacity * sizeof(int));
     v->capacity = newCapacity;
     if (newCapacity == 0)
         v->data = NULL;
@@ -42,7 +38,7 @@ void clear(vector *v){
 }
 
 void shrinkToFit(vector *v){
-    free(v->data + v->size * sizeof(int));
+    reserve(v, v->size);
 }
 
 void deleteVector(vector *v){

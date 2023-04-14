@@ -4,7 +4,12 @@
 
 int main() {
     vector v = createVector(4);
-    printf("%d", v.size);
+    for (int i = 0; i < 4; i++)
+        v.data[i] = i;
 
+    v.size = 2;
+    shrinkToFit(&v);
+    for (int i = 0; i < 4; i++)
+        printf("%d ", v.data[i]);
     return 0;
 }

@@ -14,6 +14,8 @@ void reserve(vector *v, size_t newCapacity);
 
 void clear(vector *v);
 
-int f(int a);
+void shrinkToFit(vector *v);
+
+void deleteVector(vector *v);
 
 #endif //MAIN_C_VECTOR_H
