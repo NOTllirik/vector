@@ -1,5 +1,6 @@
 #ifndef MAIN_C_VECTOR_H
 #define MAIN_C_VECTOR_H
+
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdio.h>
@@ -32,8 +33,8 @@ void popBack(vector *v);
 
 int *atVector(vector *v, size_t index);
 
-int* back(vector *v);
+int *back(vector *v);
 
-int* front(vector *v);
+int *front(vector *v);
 
 #endif //MAIN_C_VECTOR_H
